@@ -39,3 +39,59 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* Gallery container */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Image container */
+.image {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Image */
+.image img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Translucent background */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Caption */
+.caption {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    display: none; /* Initially hidden */
+}
+
+/* Show overlay and caption on hover */
+.image:hover .overlay {
+    opacity: 1;
+}
+
+.image:hover img {
+    transform: scale(1.1); /* Enlarge image on hover */
+}
+
+.image:hover .caption {
+    display: block; /* Show caption on hover */
+}
