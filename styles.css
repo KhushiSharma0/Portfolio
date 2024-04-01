@@ -107,30 +107,48 @@ footer {
     padding: 20px;
 }
 
-.image {
+/* Continuing from your existing CSS */
+
+/* Adjustments for the Image Enlarging and Background Overlay */
+.image img {
+    transition: transform 0.5s ease; /* Smooth transition for image transform */
+}
+
+.image:hover img {
+    transform: scale(1.1); /* Enlarge image slightly on hover */
+}
+
+.gallery {
     position: relative;
 }
 
-.image img {
+.image::before {
+    content: ""; /* This creates the overlay effect */
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none; /* Prevents the overlay from interfering with clicking the image */
 }
 
+.image:hover::before {
+    opacity: 1; /* Show overlay on hover */
+}
+
+/* Adjustments for Caption */
 .overlay {
     position: absolute;
     bottom: 0;
-    background: rgba(0,0,0,0.8);
-    color: #fff;
     width: 100%;
-    transition: transform 0.5s ease;
-    transform: translateY(100%);
+    transform: translateY(+100%); /* Moves the overlay up to show on hover */
+    text-align: center; /* Center-align the caption text */
+    font-size: 16px; /* Optional: Adjusts the caption font size */
 }
 
 .image:hover .overlay {
-    transform: translateY(0);
-}
-
-.caption {
-    padding: 10px;
+    transform: translateY(0); /* Resets to original position to display caption */
 }
