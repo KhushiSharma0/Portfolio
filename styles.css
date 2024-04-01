@@ -1,97 +1,136 @@
-body {
-    font-family: Arial, sans-serif;
+/* Basic Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
 }
 
-header {
+/* Top Bar & Navigation */
+.top-bar {
     background-color: #333;
     color: #fff;
-    padding: 10px 0;
+    padding: 1rem 0;
     text-align: center;
 }
 
+.top-bar h1 {
+    margin: 0;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Container */
 .container {
-    max-width: 960px;
+    padding: 20px;
+    max-width: 1200px;
     margin: auto;
-    padding: 20px;
+    overflow: auto;
 }
 
+/* Card */
 .card {
-    background-color: #fff;
-    padding: 20px;
+    background: #fff;
     margin: 20px 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.card h2 {
-    margin-top: 0;
+.card h2, .card p {
+    margin-bottom: 10px;
 }
 
+/* Form Styles */
+#contactForm {
+    margin-top: 20px;
+}
+
+#contactForm label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#contactForm input[type="text"],
+#contactForm input[type="email"],
+#contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#contactForm button {
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#contactForm button:hover {
+    background: #555;
+}
+
+/* Footer */
 footer {
+    text-align: center;
+    padding: 20px 0;
     background-color: #333;
     color: #fff;
-    padding: 10px 0;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    margin-top: 20px;
 }
 
-/* Gallery container */
+/* Art Gallery Styles */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
+    padding: 20px;
 }
 
-/* Image container */
 .image {
     position: relative;
-    overflow: hidden;
 }
 
-/* Image */
 .image img {
     width: 100%;
     height: auto;
-    transition: transform 0.3s;
+    display: block;
 }
 
-/* Overlay */
 .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Translucent background */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    transition: transform 0.5s ease;
+    transform: translateY(100%);
 }
 
-/* Caption */
-.caption {
-    text-align: center;
-    color: white;
-    padding: 20px;
-    display: none; /* Initially hidden */
-}
-
-/* Show overlay and caption on hover */
 .image:hover .overlay {
-    opacity: 1;
+    transform: translateY(0);
 }
 
-.image:hover img {
-    transform: scale(1.1); /* Enlarge image on hover */
-}
-
-.image:hover .caption {
-    display: block; /* Show caption on hover */
+.caption {
+    padding: 10px;
 }
