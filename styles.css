@@ -1,9 +1,10 @@
-/* Basic styling. */
+/* Basic styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000000;
+    background-color: #f4f4f4;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 header {
@@ -48,10 +49,11 @@ h1 {
     margin-bottom: 30px; /* Space between images */
     border-radius: 15px;
     overflow: hidden; /* To ensure rounded corners */
+    box-sizing: border-box;
 }
 
 .img-container img {
-    width: 100%;
+    width: 100%; /* Image fills the container's width */
     height: auto; /* Maintain aspect ratio */
     border-radius: 15px; /* Round the edges of the images */
     object-fit: cover; /* Ensures the image covers the container proportionally */
@@ -71,10 +73,11 @@ h1 {
     letter-spacing: 1px;
 }
 
-/* Responsive Design */
+/* Ensure proper responsiveness */
 @media (max-width: 768px) {
     .img-container {
         width: 100%; /* Full width for smaller screens */
+        max-width: 100%; /* Remove max-width on smaller devices */
     }
 
     .caption {
