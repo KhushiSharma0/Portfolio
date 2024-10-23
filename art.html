@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art Gallery</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
@@ -25,27 +25,26 @@
     <script>
         const imageFolder = 'art-images/';  // Path to your image folder
 
-        // Array of your unique image filenames
+        // Array of your unique image filenames, reordered as you wish
         const images = [
-            '2014_Sunsets.png',
+            'calmness.png',
+            'Cottagecore.png',
             '90s cartoon intro background-ey.png',
             'Blush_Blind.png',
-            'Cottagecore.png',
             'Faceless.png',
             'Gatto.png',
+            'Umber_Beauty.png',
             'Guide_Me_Like_A_River.png',
             'Its_Winter_And_You_re_Not_Here.png',
             'Struggles.png',
-            'Umber_Beauty.png',
             'Unexplainable - loving myself.png',
             'Used too much airbrush.png',
             'Woman_With_Wine_Glass.png',
             'bonded.png',
-            'calmness.png',
-            'cartoon_style_woman.png',
+            '2014_Sunsets.png',
             'colorful.png',
-            'cool flowy fabric - just want to lose myself in it.png',
             'curious eyes.png',
+            'cool flowy fabric - just want to lose myself in it.png',
             'feeling hydrated i guess.png',
             'idek.png',
             'kafkaesque_i_guess.png',
@@ -62,19 +61,23 @@
 
         // Loop through the images array and create cards for each image
         images.forEach((image, index) => {
-            const card = document.createElement('div');
-            card.classList.add('card');
+            const imgContainer = document.createElement('div');
+            imgContainer.classList.add('img-container');
 
             const img = document.createElement('img');
             img.src = `${imageFolder}${image}`;  // Use unique image names
             img.alt = `Art Piece ${index + 1}`;  // Customize the alt text
 
-            const caption = document.createElement('p');
-            caption.textContent = `Art Piece ${index + 1}`;  // Customize the caption
+            const caption = document.createElement('div');
+            caption.classList.add('caption');
+            
+            // Remove the file extension and display the name
+            const fileNameWithoutExtension = image.replace(/\.[^/.]+$/, "");
+            caption.textContent = fileNameWithoutExtension;  // Use the file name without extension as caption
 
-            card.appendChild(img);
-            card.appendChild(caption);
-            gallery.appendChild(card);
+            imgContainer.appendChild(img);
+            imgContainer.appendChild(caption);
+            gallery.appendChild(imgContainer);
         });
     </script>
 </body>
