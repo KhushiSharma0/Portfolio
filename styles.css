@@ -35,30 +35,52 @@ h1 {
 
 /* Gallery styles */
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
+    display: flex;
+    justify-content: center; /* Center align the gallery */
+    flex-wrap: wrap; /* Ensure wrapping of images */
+    gap: 15px; /* Space between images */
     padding: 20px;
 }
 
+/* Card and image styling */
 .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: white;
-    border: 1px solid #ddd;
     padding: 10px;
+    border-radius: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
+    width: 100%;
+    max-width: 400px; /* Max width of the image card */
 }
 
 .card img {
     width: 100%;
-    height: auto;
     max-width: 100%;
-    display: block;
-    margin-bottom: 10px;
+    height: auto;
+    max-height: 400px; /* Ensure it fits the screen */
+    border-radius: 15px; /* Rounded edges */
+    object-fit: cover; /* Ensures it covers the container proportionally */
 }
 
 .card p {
-    margin: 0;
+    margin-top: 10px;
     font-size: 16px;
     font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        max-width: 90%; /* For smaller screens, let the images take up more space */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        max-width: 100%; /* For extra-small screens, make the images full width */
+    }
 }
