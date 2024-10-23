@@ -4,47 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art Gallery</title>
-    <!-- Link your CSS file here -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Top bar menu -->
-    <div class="top-bar">
-        <h1>Art Gallery</h1>
-        <div class="menu">
+    <header>
+        <h1>My Art Gallery</h1>
+        <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
                 <li><a href="art.html">Art</a></li>
-                <!-- Add more menu items as needed -->
             </ul>
-        </div>
-    </div>
-    
-    <!-- Main content -->
-    <div class="content">
-        <!-- Grid layout for art -->
-        <div class="gallery">
-            <div class="image">
-                <img src="art-images\beheld.png" alt="Artwork 1">
-                <div class="overlay">
-                    <div class="caption">
-                        <h3>Title 1</h3>
-                        <p>Date: January 1, 2024</p>
-                    </div>
-                </div>
-            </div>
-            <div class="image">
-                <img src="image2.jpg" alt="Artwork 2">
-                <div class="overlay">
-                    <div class="caption">
-                        <h3>Title 2</h3>
-                        <p>Date: February 15, 2024</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Add more image blocks as needed -->
-        </div>
-    </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="gallery" id="gallery"></div>
+    </main>
+
+    <script>
+        const imageFolder = 'art-images/';  // Path to your image folder
+
+        // Array of unique image filenames
+        const images = [
+            'sunset-landscape.png',
+            'mountain-peak.jpg',
+            'forest-path.png',
+            'abstract-art.jpg',
+            'urban-skyline.png'
+            // Add more image filenames here
+        ];
+
+        const gallery = document.getElementById('gallery');
+
+        // Loop through the images array and create cards for each image
+        images.forEach((image, index) => {
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            const img = document.createElement('img');
+            img.src = `${imageFolder}${image}`;
+            img.alt = `Art Piece ${index + 1}`;
+
+            const caption = document.createElement('p');
+            caption.textContent = `Art Piece ${index + 1}`; 
+
+            card.appendChild(img);
+            card.appendChild(caption);
+            gallery.appendChild(card);
+        });
+    </script>
 </body>
 </html>
-
