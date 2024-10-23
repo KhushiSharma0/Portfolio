@@ -1,154 +1,64 @@
-/* Basic Reset */
-* {
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
 }
 
-/* Top Bar & Navigation */
-.top-bar {
+header {
     background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
+    color: white;
+    padding: 10px;
     text-align: center;
 }
 
-.top-bar h1 {
-    margin: 0;
-}
-
-.menu ul {
+nav ul {
     list-style: none;
     padding: 0;
 }
 
-.menu ul li {
+nav ul li {
     display: inline;
-    margin: 0 15px;
+    margin-right: 20px;
 }
 
-.menu ul li a {
-    color: #fff;
+nav ul li a {
+    color: white;
     text-decoration: none;
 }
 
-/* Container */
-.container {
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
-    overflow: auto;
+h1 {
+    margin: 0;
+    padding: 10px;
 }
 
-/* Card */
+/* Gallery styles */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
 .card {
-    background: #fff;
-    margin: 20px 0;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.card h2, .card p {
+.card img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
     margin-bottom: 10px;
 }
 
-/* Form Styles */
-#contactForm {
-    margin-top: 20px;
-}
-
-#contactForm label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-#contactForm input[type="text"],
-#contactForm input[type="email"],
-#contactForm textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
-#contactForm button {
-    display: inline-block;
-    background: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-#contactForm button:hover {
-    background: #555;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #333;
-    color: #fff;
-    margin-top: 20px;
-}
-
-/* Art Gallery Styles */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-/* Continuing from your existing CSS */
-
-/* Adjustments for the Image Enlarging and Background Overlay */
-.image img {
-    transition: transform 0.5s ease; /* Smooth transition for image transform */
-}
-
-.image:hover img {
-    transform: scale(1.1); /* Enlarge image slightly on hover */
-}
-
-.gallery {
-    position: relative;
-}
-
-.image::before {
-    content: ""; /* This creates the overlay effect */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    pointer-events: none; /* Prevents the overlay from interfering with clicking the image */
-}
-
-.image:hover::before {
-    opacity: 1; /* Show overlay on hover */
-}
-
-/* Adjustments for Caption */
-.overlay {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    transform: translateY(+100%); /* Moves the overlay up to show on hover */
-    text-align: center; /* Center-align the caption text */
-    font-size: 16px; /* Optional: Adjusts the caption font size */
-}
-
-.image:hover .overlay {
-    transform: translateY(0); /* Resets to original position to display caption */
+.card p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
 }
