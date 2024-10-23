@@ -49,11 +49,11 @@ h1 {
     margin-bottom: 30px; /* Space between images */
     border-radius: 15px;
     overflow: hidden; /* To ensure rounded corners */
-    box-sizing: border-box;
 }
 
 .img-container img {
     width: 100%; /* Image fills the container's width */
+    max-height: 80vh; /* Ensure the image does not exceed 80% of the viewport height */
     height: auto; /* Maintain aspect ratio */
     border-radius: 15px; /* Round the edges of the images */
     object-fit: cover; /* Ensures the image covers the container proportionally */
