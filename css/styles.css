@@ -47,7 +47,7 @@ h1 {
     width: 90%; /* Make images take up 90% of the screen width */
     max-width: 1200px; /* Set a maximum width for larger screens */
     margin-bottom: 30px; /* Space between images */
-    border-radius: 15px;
+    border-radius: 8px; /* Smaller rounded corners */
     overflow: hidden; /* To ensure rounded corners */
 }
 
@@ -55,8 +55,8 @@ h1 {
     width: 100%; /* Image fills the container's width */
     max-height: 80vh; /* Ensure the image does not exceed 80% of the viewport height */
     height: auto; /* Maintain aspect ratio */
-    border-radius: 15px; /* Round the edges of the images */
-    object-fit: cover; /* Ensures the image covers the container proportionally */
+    border-radius: 8px; /* Smaller rounded edges for the images */
+    object-fit: contain; /* Fit the image by width, no cropping */
 }
 
 .caption {
