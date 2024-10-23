@@ -25,14 +25,37 @@
     <script>
         const imageFolder = 'art-images/';  // Path to your image folder
 
-        // Array of unique image filenames
+        // Array of your unique image filenames
         const images = [
-            'sunset-landscape.png',
-            'mountain-peak.jpg',
-            'forest-path.png',
-            'abstract-art.jpg',
-            'urban-skyline.png'
-            // Add more image filenames here
+            '2014_Sunsets.png',
+            '90s cartoon intro background-ey.png',
+            'Blush_Blind.png',
+            'Cottagecore.png',
+            'Faceless.png',
+            'Gatto.png',
+            'Guide_Me_Like_A_River.png',
+            'Its_Winter_And_You_re_Not_Here.png',
+            'Struggles.png',
+            'Umber_Beauty.png',
+            'Unexplainable - loving myself.png',
+            'Used too much airbrush.png',
+            'Woman_With_Wine_Glass.png',
+            'bonded.png',
+            'calmness.png',
+            'cartoon_style_woman.png',
+            'colorful.png',
+            'cool flowy fabric - just want to lose myself in it.png',
+            'curious eyes.png',
+            'feeling hydrated i guess.png',
+            'idek.png',
+            'kafkaesque_i_guess.png',
+            'looks meaningful.png',
+            'magical hair.png',
+            'piercing sienna.png',
+            'quiet dread.png',
+            'really need to give her some bangs.png',
+            'tried to follow bob ross.png',
+            'under fire.png'
         ];
 
         const gallery = document.getElementById('gallery');
@@ -43,11 +66,11 @@
             card.classList.add('card');
 
             const img = document.createElement('img');
-            img.src = `${imageFolder}${image}`;
-            img.alt = `Art Piece ${index + 1}`;
+            img.src = `${imageFolder}${image}`;  // Use unique image names
+            img.alt = `Art Piece ${index + 1}`;  // Customize the alt text
 
             const caption = document.createElement('p');
-            caption.textContent = `Art Piece ${index + 1}`; 
+            caption.textContent = `Art Piece ${index + 1}`;  // Customize the caption
 
             card.appendChild(img);
             card.appendChild(caption);
