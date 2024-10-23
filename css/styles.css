@@ -44,8 +44,7 @@ h1 {
 
 .img-container {
     position: relative;
-    width: 90vw; /* Make images take up 90% of the viewport width */
-    max-width: 1200px; /* Set a maximum width for larger screens */
+    width: 70vw; /* Make images take up 90% of the viewport width */
     margin-bottom: 3vh; /* Space between images using viewport height */
     border-radius: 8px; /* Smaller rounded corners */
     overflow: hidden; /* To ensure rounded corners */
@@ -63,7 +62,7 @@ h1 {
     position: absolute;
     bottom: 2vh;
     right: 2vw;
-    background-color: rgba(0, 0, 0, 0.3); /* A darker, translucent background */
+    background-color: rgba(0, 0, 0, 0); /* A darker, translucent background */
     color: rgba(255, 255, 255, 0.7); /* A less prominent white text */
     padding: 1vh 1vw; /* Use viewport-based padding */
     border-radius: 8px;
