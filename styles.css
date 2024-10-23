@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #000000;
 }
 
 header {
@@ -36,51 +36,54 @@ h1 {
 /* Gallery styles */
 .gallery {
     display: flex;
-    justify-content: center; /* Center align the gallery */
-    flex-wrap: wrap; /* Ensure wrapping of images */
-    gap: 15px; /* Space between images */
+    flex-direction: column; /* Ensures 1 image per row */
+    align-items: center; /* Center align the images horizontally */
     padding: 20px;
 }
 
-/* Card and image styling */
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    padding: 10px;
+.img-container {
+    position: relative;
+    width: 90%; /* Make images take up 90% of the screen width */
+    max-width: 1200px; /* Set a maximum width for larger screens */
+    margin-bottom: 30px; /* Space between images */
     border-radius: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 100%;
-    max-width: 400px; /* Max width of the image card */
+    overflow: hidden; /* To ensure rounded corners */
 }
 
-.card img {
+.img-container img {
     width: 100%;
-    max-width: 100%;
-    height: auto;
-    max-height: 400px; /* Ensure it fits the screen */
-    border-radius: 15px; /* Rounded edges */
-    object-fit: cover; /* Ensures it covers the container proportionally */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 15px; /* Round the edges of the images */
+    object-fit: cover; /* Ensures the image covers the container proportionally */
 }
 
-.card p {
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: bold;
+.caption {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: rgba(0, 0, 0, 0.3); /* A darker, translucent background */
+    color: rgba(255, 255, 255, 0.7); /* A less prominent white text */
+    padding: 8px;
+    border-radius: 10px;
+    font-family: 'Georgia', serif; /* Elegant font */
+    font-size: 16px; /* Adjust size as needed */
+    font-style: italic;
+    letter-spacing: 1px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .card {
-        max-width: 90%; /* For smaller screens, let the images take up more space */
+    .img-container {
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    .caption {
+        font-size: 14px; /* Slightly smaller text on mobile */
     }
 }
 
 @media (max-width: 480px) {
-    .card {
-        max-width: 100%; /* For extra-small screens, make the images full width */
+    .caption {
+        font-size: 12px; /* Further adjust for extra small screens */
     }
 }
