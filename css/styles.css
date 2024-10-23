@@ -4,13 +4,13 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
 }
 
 header {
     background-color: #333;
     color: white;
-    padding: 1vh 0; /* Use viewport height for padding */
+    padding: 1vh 0;
     text-align: center;
 }
 
@@ -21,7 +21,7 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin-right: 2vw; /* Use viewport width for margins */
+    margin-right: 2vw;
 }
 
 nav ul li a {
@@ -31,61 +31,96 @@ nav ul li a {
 
 h1 {
     margin: 0;
-    padding: 1vh; /* Use viewport height for padding */
+    padding: 1vh;
 }
 
-/* Gallery styles */
+/* Pinterest-like Grid Layout */
 .gallery {
-    display: flex;
-    flex-direction: column; /* Ensures 1 image per row */
-    align-items: center; /* Center align the images horizontally */
-    padding: 2vh; /* Use viewport height for padding */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 15px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
 }
 
-.img-container {
-    position: relative;
-    width: 70vw; /* Make images take up 90% of the viewport width */
-    margin-bottom: 3vh; /* Space between images using viewport height */
-    border-radius: 8px; /* Smaller rounded corners */
-    overflow: hidden; /* To ensure rounded corners */
-}
-
-.img-container img {
-    width: 100%; /* Image fills the container's width */
-    max-height: none; /* Remove height limitation */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Smaller rounded edges for the images */
-    object-fit: contain; /* Fit the image by width, no cropping */
-}
-
-.caption {
-    position: absolute;
-    bottom: 2vh;
-    right: 2vw;
-    background-color: rgba(0, 0, 0, 0); /* A darker, translucent background */
-    color: rgba(255, 255, 255, 0.7); /* A less prominent white text */
-    padding: 1vh 1vw; /* Use viewport-based padding */
+.grid-item {
+    width: 100%;
+    height: auto;
     border-radius: 8px;
-    font-family: 'Georgia', serif; /* Elegant font */
-    font-size: 2vh; /* Responsive font size based on viewport height */
-    font-style: italic;
-    letter-spacing: 1px;
+    cursor: pointer;
+    object-fit: cover;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-/* Ensure proper responsiveness */
-@media (max-width: 768px) {
-    .img-container {
-        width: 95vw; /* Slightly larger width for smaller screens */
-        max-width: 100%; /* Remove max-width on smaller devices */
-    }
+.grid-item:hover {
+    transform: scale(1.05);
+}
 
-    .caption {
-        font-size: 1.8vh; /* Slightly smaller text on mobile */
+/* Lightbox Overlay */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox-img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.lightbox-nav {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prev, .next {
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    margin: 0 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid-item {
+        border-radius: 4px;
     }
 }
 
 @media (max-width: 480px) {
-    .caption {
-        font-size: 1.5vh; /* Further adjust for extra small screens */
+    .grid-item {
+        border-radius: 2px;
+    }
+
+    .prev, .next {
+        font-size: 40px;
+    }
+
+    .close {
+        font-size: 30px;
     }
 }
