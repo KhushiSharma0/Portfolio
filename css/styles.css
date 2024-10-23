@@ -10,7 +10,7 @@ body {
 header {
     background-color: #333;
     color: white;
-    padding: 10px;
+    padding: 1vh 0; /* Use viewport height for padding */
     text-align: center;
 }
 
@@ -21,7 +21,7 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin-right: 20px;
+    margin-right: 2vw; /* Use viewport width for margins */
 }
 
 nav ul li a {
@@ -31,7 +31,7 @@ nav ul li a {
 
 h1 {
     margin: 0;
-    padding: 10px;
+    padding: 1vh; /* Use viewport height for padding */
 }
 
 /* Gallery styles */
@@ -39,14 +39,14 @@ h1 {
     display: flex;
     flex-direction: column; /* Ensures 1 image per row */
     align-items: center; /* Center align the images horizontally */
-    padding: 20px;
+    padding: 2vh; /* Use viewport height for padding */
 }
 
 .img-container {
     position: relative;
-    width: 90%; /* Make images take up 90% of the screen width */
+    width: 90vw; /* Use viewport width for image width */
     max-width: 1200px; /* Set a maximum width for larger screens */
-    margin-bottom: 30px; /* Space between images */
+    margin-bottom: 3vh; /* Space between images using viewport height */
     border-radius: 8px; /* Smaller rounded corners */
     overflow: hidden; /* To ensure rounded corners */
 }
@@ -61,14 +61,14 @@ h1 {
 
 .caption {
     position: absolute;
-    bottom: 15px;
-    right: 15px;
+    bottom: 2vh;
+    right: 2vw;
     background-color: rgba(0, 0, 0, 0.3); /* A darker, translucent background */
     color: rgba(255, 255, 255, 0.7); /* A less prominent white text */
-    padding: 8px;
-    border-radius: 10px;
+    padding: 1vh 1vw; /* Use viewport-based padding */
+    border-radius: 8px;
     font-family: 'Georgia', serif; /* Elegant font */
-    font-size: 16px; /* Adjust size as needed */
+    font-size: 2vh; /* Responsive font size based on viewport height */
     font-style: italic;
     letter-spacing: 1px;
 }
@@ -76,17 +76,17 @@ h1 {
 /* Ensure proper responsiveness */
 @media (max-width: 768px) {
     .img-container {
-        width: 100%; /* Full width for smaller screens */
+        width: 95vw; /* Slightly larger width for smaller screens */
         max-width: 100%; /* Remove max-width on smaller devices */
     }
 
     .caption {
-        font-size: 14px; /* Slightly smaller text on mobile */
+        font-size: 1.8vh; /* Slightly smaller text on mobile */
     }
 }
 
 @media (max-width: 480px) {
     .caption {
-        font-size: 12px; /* Further adjust for extra small screens */
+        font-size: 1.5vh; /* Further adjust for extra small screens */
     }
 }
