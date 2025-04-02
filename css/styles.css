@@ -1,132 +1,84 @@
-/* Basic styling */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    overflow-x: hidden;
+/* Reset default link color */
+a {
+    color: inherit;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 1vh 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 2vw;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-h1 {
-    margin: 0;
-    padding: 1vh;
-}
-
-/* Pinterest-like Grid Layout */
-.gallery {
+/* Portfolio landing page container */
+.container {
+    padding: 2rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-gap: 15px;
-    padding: 20px;
-    max-width: 1200px;
+    gap: 2rem;
+    max-width: 900px;
     margin: auto;
 }
 
-.grid-item {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    cursor: pointer;
-    object-fit: cover;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.grid-item:hover {
-    transform: scale(1.05);
-}
-
-/* Lightbox Overlay */
-.lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Dark translucent background */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    display: flex; /* Use flexbox to center content */
-}
-
-.lightbox-img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 8px;
-}
-
-.close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
-}
-
-.lightbox-nav {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+/* Top bar styles for home page */
+.top-bar {
+    background-color: #ffffff;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #e0e0e0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
-.prev, .next {
-    font-size: 50px;
-    color: white;
-    cursor: pointer;
-    user-select: none;
-    margin: 0 20px;
+.top-bar h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
 }
 
-.prev:hover, .next:hover {
-    color: #ccc;
+.top-bar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
 }
 
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .grid-item {
-        border-radius: 4px;
-    }
+.top-bar nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
 }
 
-@media (max-width: 480px) {
-    .grid-item {
-        border-radius: 2px;
-    }
+.top-bar nav a:hover {
+    color: #0077cc;
+}
 
-    .prev, .next {
-        font-size: 40px;
-    }
+/* Project card layout */
+.card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
 
-    .close {
-        font-size: 30px;
-    }
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.card a {
+    text-decoration: none;
+    color: #111;
+}
+
+.card a:hover {
+    color: #0077cc;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    color: #777;
 }
