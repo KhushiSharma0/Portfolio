@@ -4,56 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- Top bar menu -->
-<div class="top-bar">
-    <h1>My Portfolio</h1>
-    <div class="menu">
+<!-- Navigation Bar -->
+<header class="top-bar">
+    <h1>Khushi Sharma</h1>
+    <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="art.html">Art</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="education.html">Education</a></li>
         </ul>
-    </div>
-</div>
+    </nav>
+</header>
 
-<div class="container">
-    <!-- Portfolio cards -->
+<!-- Project Section -->
+<main class="container">
     <div class="card">
-        <h2>Project 1</h2>
-        <p>Description of Project 1.</p>
+        <h2><a href="raytracing.html">Ray Tracing in Unity</a></h2>
+        <p>Simulating light reflections using physics and vector math in Unity.</p>
     </div>
     <div class="card">
-        <h2>Project 2</h2>
-        <p>Description of Project 2.</p>
+        <h2><a href="art.html">Art Gallery</a></h2>
+        <p>Selected works from my digital and traditional sketchbook.</p>
     </div>
-    <!-- Add more cards for your projects -->
+    <!-- Add more project cards below -->
+</main>
 
-    <!-- Contacts -->
-    </div>
-</div>
-
+<!-- Footer -->
 <footer>
-    &copy; 2024 My Portfolio
+    &copy; 2024 Khushi Sharma • <a href="mailto:your@email.com">Contact Me</a>
 </footer>
-
-<script>
-    // JavaScript code
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent default form submission
-
-        // Get form data
-        var formData = new FormData(this);
-
-        // You can send the form data to your server using AJAX or perform other actions here
-        // For demonstration purposes, we'll just log the form data to the console
-        console.log('Form data:', Object.fromEntries(formData));
-    });
-</script>
 
 </body>
 </html>
