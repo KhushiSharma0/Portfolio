@@ -82,3 +82,61 @@ footer {
     font-size: 0.9rem;
     color: #777;
 }
+
+/* ✨ Dark Project Page Styling */
+.dark-page {
+    background-color: #111;
+    color: #f0f0f0;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    padding: 2rem;
+}
+
+.page-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+h1, h2 {
+    color: #fff;
+}
+
+.date {
+    font-style: italic;
+    color: #aaa;
+    margin-bottom: 1rem;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+code {
+    background-color: #1e1e1e;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-family: monospace;
+    color: #fff176;
+}
+
+a {
+    color: #66ccff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.screenshot {
+    max-width: 100%;
+    margin-top: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    color: #888;
+}
